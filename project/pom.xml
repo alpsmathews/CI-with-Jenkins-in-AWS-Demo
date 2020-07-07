@@ -10,6 +10,18 @@
     <artifactId>project</artifactId>
     <packaging>war</packaging>
     <name>Project</name>
+ <distributionManagement>
+        <repository>
+		    <id>deployment</id>
+			<name>Internal Releases</name>
+			<url>http://35.192.88.18:8081/repository/sample-release/</url>
+		</repository>
+		<snapshotRepository>
+		    <id>deployment</id>
+			<name>Internal Snapshot Releases</name>
+			<url>http://35.192.88.18:8081/repository/sample-snapshots/</url>
+		</snapshotRepository>
+ </distributionManagement>
  <dependencies>
         <!-- runtime dependency -->
         <dependency>
