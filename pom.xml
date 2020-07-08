@@ -1,37 +1,3 @@
-
-Skip to content
-Pull requests
-Issues
-Marketplace
-Explore
-@alpsmathews
-RAMKIDEVOPS /
-CI-with-Jenkins-in-AWS-Demo
-forked from RAMKITCS/CI-with-Jenkins-in-AWS-Demo
-
-1
-2
-
-    695
-
-Code
-Pull requests 16
-Actions
-Projects
-Wiki
-Security
-
-    Insights
-
-CI-with-Jenkins-in-AWS-Demo/pom.xml
-@RAMKIDEVOPS
-RAMKIDEVOPS Update pom.xml
-Latest commit 173d3dc on Jan 16
-History
-2 contributors
-@RAMKIDEVOPS
-@RAMKITCS
-53 lines (50 sloc) 1.82 KB
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0          http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
