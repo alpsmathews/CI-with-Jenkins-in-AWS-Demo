@@ -10,6 +10,18 @@
     <artifactId>project</artifactId>
     <packaging>war</packaging>
     <name>Project</name>
+ <distributionManagement>
+        <repository>
+		    <id>deployment</id>
+			<name>Internal Releases</name>
+			<url>http://34.69.20.95:8081/repository/sample-release/</url>
+		</repository>
+		<snapshotRepository>
+		    <id>deployment</id>
+			<name>Internal Snapshot Releases</name>
+			<url>http://34.69.20.95:8081/repository/sample-snapshots/</url>
+		</snapshotRepository>
+ </distributionManagement>
  <dependencies>
         <!-- runtime dependency -->
         <dependency>
@@ -37,10 +49,9 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-war-plugin</artifactId>
+						<version>3.1.0</version>
                         <configuration>
-                            <archive>
-                                <addMavenDescriptor>false</addMavenDescriptor>
-                            </archive>
+						    <failOnMissingWebXml>false</failOnMissingWebXml>
                         </configuration>
                     </plugin>
                 </plugins>
