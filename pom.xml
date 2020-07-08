@@ -10,18 +10,6 @@
     <artifactId>project</artifactId>
     <packaging>war</packaging>
     <name>Project</name>
- <distributionManagement>
-        <repository>
-		    <id>deployment</id>
-			<name>Internal Releases</name>
-			<url>http://34.69.20.95:8081/repository/sample-release/</url>
-		</repository>
-		<snapshotRepository>
-		    <id>deployment</id>
-			<name>Internal Snapshot Releases</name>
-			<url>http://34.69.20.95:8081/repository/sample-snapshots/</url>
-		</snapshotRepository>
- </distributionManagement>
  <dependencies>
         <!-- runtime dependency -->
         <dependency>
@@ -44,12 +32,15 @@
         <profile>
             <id>assembly</id>
             <build>
-                <plugins>       
+                <plugins>
+             
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-war-plugin</artifactId>
                         <configuration>
-						     <webXml>/project/src/main/Webapp/WEB-INF/web.xml</webXml>  
+                            <archive>
+                                <addMavenDescriptor>false</addMavenDescriptor>
+                            </archive>
                         </configuration>
                     </plugin>
                 </plugins>
