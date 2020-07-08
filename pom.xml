@@ -1,51 +1,87 @@
+
+Skip to content
+Pull requests
+Issues
+Marketplace
+Explore
+@alpsmathews
+RAMKIDEVOPS /
+CI-with-Jenkins-in-AWS-Demo
+forked from RAMKITCS/CI-with-Jenkins-in-AWS-Demo
+
+1
+2
+
+    695
+
+Code
+Pull requests 16
+Actions
+Projects
+Wiki
+Security
+
+    Insights
+
+CI-with-Jenkins-in-AWS-Demo/pom.xml
+@RAMKIDEVOPS
+RAMKIDEVOPS Update pom.xml
+Latest commit 173d3dc on Jan 16
+History
+2 contributors
+@RAMKIDEVOPS
+@RAMKITCS
+53 lines (50 sloc) 1.82 KB
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0          http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>ci.jenkins.aws</groupId>
-        <artifactId>proj3</artifactId>
-        <version>1.0-RAMA</version>
-    </parent>
+    <groupId>ci.jenkins.aws</groupId>
+    <artifactId>proj3</artifactId>
+    <version>1.0-RAMA</version>
+    <packaging>pom</packaging>
+    <name>Project Build</name>
 
-    <artifactId>project</artifactId>
-    <packaging>war</packaging>
-    <name>Project</name>
- <dependencies>
-        <!-- runtime dependency -->
-        <dependency>
-            <groupId>hsqldb</groupId>
-            <artifactId>hsqldb</artifactId>
-            <version>1.8.0.10</version>
-            <scope>runtime</scope>
-        </dependency>
+    <modules>
+        <module>project</module>
+    </modules>
 
-        <!-- provided dependency -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+   <dependencies>
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>2.5</version>
-            <scope>provided</scope>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <profiles>
-        <profile>
-            <id>assembly</id>
-            <build>
-                <plugins>
-             
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-war-plugin</artifactId>
-                        <configuration>
-                            <archive>
-                                <addMavenDescriptor>false</addMavenDescriptor>
-                            </archive>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
-
+    <build>
+        <pluginManagement>
+            <plugins>
+                              <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>2.4</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>2.1.2</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+                       <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <addMavenDescriptor>false</addMavenDescriptor>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
