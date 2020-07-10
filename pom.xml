@@ -8,12 +8,12 @@
                <repository>
 		    <id>deployment</id>
 			<name>Internal Releases</name>
-			<url>http://104.197.133.111:8081/repository/sample-release/</url>
+			<url>http://35.222.145.67:8081/repository/sample-release/</url>
 		</repository>
 		<snapshotRepository>
 		    <id>deployment</id>
 			<name>Internal Snapshot Releases</name>
-			<url>http://104.197.133.111:8081/repository/sample-snapshots/</url>
+			<url>http://35.222.145.67:8081/repository/sample-snapshots/</url>
 		</snapshotRepository>
         </distributionManagement>
 	<dependencies>
