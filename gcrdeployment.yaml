@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: mytestapp
-        image: gcr.io/devops-alps-281914/alpsmathews/sprint6dockerjenkinsgcloud
+        image: gcr.io/devops-alps-281914/alpsmathews/sprint6dockerjenkinsgcloud@sha256:1705764a31c51fd57682b714314f0357e065df576f816abfbaa032f6c2c8eaba
         ports:
         - containerPort: 8080
 ---
@@ -28,7 +28,7 @@ spec:
   type: LoadBalancer 
   ports:
   - protocol: TCP 
-    port: 80
+    port: 8086
     targetPort: 8080 
   selector:
     app: mytestapp
