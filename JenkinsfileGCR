@@ -37,10 +37,12 @@ pipeline {
 	                }
 		   }
             stage('publish gcloud') {
+             steps {
                   sh "gcloud docker -- push us.gcr.io/[devops-alps-281914]/[sprint6-kubectl-cluster-gcr]"
              }
-	           stage('Deploy to GKE') {
- 			steps{
+			} 
+	        stage('Deploy to GKE') {
+ 			   steps{
  				echo "Deployment started"
 				sh 'ls -ltr'
 				sh 'pwd'
