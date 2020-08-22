@@ -36,15 +36,9 @@ pipeline {
 	                   }
 	                }
 		   }
-            stage('Deploy Image') {
-                steps{
-                    script {
-                    docker.withRegistry("https://gcr.io", 'gcr:[devops-alps-281914]') {
-                       sh "docker push [gcr.io/devops-alps-281914/alpsmathews/sprint6dockerjenkinsgcloud]"
-                     }
-                    }
-                }
-            }
+            stage('publish gcloud') {
+                  sh "gcloud docker -- push us.gcr.io/[devops-alps-281914]/[sprint6-kubectl-cluster-gcr]"
+             }
 	           stage('Deploy to GKE') {
  			steps{
  				echo "Deployment started"
