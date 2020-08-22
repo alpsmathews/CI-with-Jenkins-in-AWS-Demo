@@ -29,18 +29,22 @@ pipeline {
 			  sh 'mvn test'
 			}
 		   }
-	    	stage("docker build"){
-				Img = docker.build(
-					"devops-alps-281914/gcr.io/devops-alps-281914/alpsmathews/sprint6dockerjenkinsgcloud:latest",
-					"-f Dockerfile ."
-				)
-			}
-
-			stage("docker push") {
-				docker.withRegistry('https://gcr.io', "gcr:credential-id") {
-					Img.push("imageTag")
-				}
-			}
+		   stage('Build GCR Image') { 
+			steps {
+	                   script {
+	                      dockerImage = docker.build registry + ":$BUILD_NUMBER"
+	                   }
+	                }
+		   }
+            stage('Deploy Image') {
+                steps{
+                    script {
+                    docker.withRegistry( '', registryCredential ) {
+                        dockerImage.push()
+                    }
+                    }
+                }
+            }
 	           stage('Deploy to GKE') {
  			steps{
  				echo "Deployment started"
