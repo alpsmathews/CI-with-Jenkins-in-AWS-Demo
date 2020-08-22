@@ -36,12 +36,8 @@ pipeline {
 	                   }
 	                }
 		   }
-            stage('publish gcloud') {
-             steps {
-		        sh "gcloud docker -- push gcr.io/devops-alps-281914/alpsmathews/sprint6dockerjenkinsgcloud"
-             }
-			} 
-	        stage('Deploy to GKE') {
+
+	        stage('Deploy to K8') {
  			   steps{
  				echo "Deployment started"
 				sh 'ls -ltr'
