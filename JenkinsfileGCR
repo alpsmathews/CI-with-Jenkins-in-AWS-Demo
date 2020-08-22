@@ -38,7 +38,7 @@ pipeline {
 		   }
             stage('publish gcloud') {
              steps {
-                  sh "gcloud docker -- push gcr.io/[devops-alps-281914]/[sprint6-kubectl-cluster-gcr]"
+                  sh "gcloud docker -- push gcr.io/devops-alps-281914/alpsmathews/sprint6dockerjenkinsgcloud"
              }
 			} 
 	        stage('Deploy to GKE') {
