@@ -39,7 +39,7 @@ pipeline {
             stage('Deploy Image') {
                 steps{
                     script {
-                    docker.withRegistry("https://gcr.io", "gcr:devops-alps-281914") {
+                    docker.withRegistry("https://gcr.io", 'gcr:[devops-alps-281914]') {
                        sh "docker push [gcr.io/devops-alps-281914/alpsmathews/sprint6dockerjenkinsgcloud]"
                      }
                     }
